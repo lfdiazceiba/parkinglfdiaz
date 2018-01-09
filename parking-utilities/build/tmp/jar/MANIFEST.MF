@@ -1,4 +1,0 @@
-Manifest-Version: 1.0
-Implementation-Title: parking-utilities
-Implementation-Version: 1.0
-
