@@ -17,15 +17,16 @@ public class Parking implements Serializable {
 
   @Id
   @GeneratedValue(strategy=GenerationType.AUTO)
-  private long    	id;
-  private Date    	entryDate;
-  private Date    	exitDate;
-  private int    		payment;
-  private String  	licensePlateVehicle;
-  private int    		displacementVehicle;
+  private long      id;
+  private Date      entryDate;
+  private Date      exitDate;
+  private int       payment;
+  private String    licensePlateVehicle;
+  private int       displacementVehicle;
   private TypeVehicle typeVehicle;
 
-  public Parking(Date entryDate, String licensePlateVehicle, int displacementVehicle, TypeVehicle typeVehicle ) {
+  public Parking(Date entryDate, String licensePlateVehicle, int displacementVehicle,
+      TypeVehicle typeVehicle) {
 
     this.entryDate           = entryDate;
     this.licensePlateVehicle = licensePlateVehicle;
@@ -110,12 +111,17 @@ public class Parking implements Serializable {
         && this.licensePlateVehicle == parking.licensePlateVehicle
         && this.typeVehicle == parking.typeVehicle);
   }
-
+  
   @Override
-  public String toString() {
-
-    return "Parking {id :\""+this.id+"\",entryDate : \""+this.entryDate+"\""
-        + ", exitDate : \""+this.exitDate+"\""
-        + ", licensePlateVehicle : \""+this.licensePlateVehicle+"\"}";
+  public int hashCode() {
+    int hash = 1;
+    hash = hash * 3 + (int)this.id;
+    hash = hash * 2 + this.displacementVehicle;
+    hash = hash * 5 + (this.entryDate == null ? 0 : this.entryDate.hashCode());
+    hash = hash * 2 + (this.licensePlateVehicle == null ? 0 : this.licensePlateVehicle.hashCode());
+    hash = hash * 3 + (this.typeVehicle == null ? 0 : this.typeVehicle.hashCode());
+    hash = hash * 3 + (this.exitDate == null ? 0 : this.exitDate.hashCode());
+    hash = hash + this.payment;
+    return hash;
   }
 }

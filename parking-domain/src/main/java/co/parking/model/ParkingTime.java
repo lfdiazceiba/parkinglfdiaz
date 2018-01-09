@@ -55,8 +55,11 @@ public class ParkingTime {
   }
 
   @Override
-  public String toString() {
-
-    return "Days: " + days + " Hours: " + hours + "Minutes: " + minutes;
+  public int hashCode() {
+    int hash = 1;
+    hash = hash * 3 + this.days;
+    hash = hash * 5 + this.hours;
+    hash = hash * 7 + this.minutes;
+    return hash;
   }
 }
