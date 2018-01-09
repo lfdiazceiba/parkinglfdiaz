@@ -1,0 +1,36 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.9.RELEASE")
+    }
+}
+
+apply plugin: 'org.springframework.boot'
+
+version = '1.0'
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'parking-domain',
+                   'Implementation-Version': version
+    }
+}
+
+bootRepackage {
+    enabled = false
+}
+
+dependencies {
+
+	compile("org.springframework.boot:spring-boot-starter-data-jpa")
+}
+
+
+test {
+	jacoco {
+		append = false
+		destinationFile = file("jacoco/jacocoTest.exec")
+	}
+	reports.junitXml.destination = file("jacoco/test-results") 
+}

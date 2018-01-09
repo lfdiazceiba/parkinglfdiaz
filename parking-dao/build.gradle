@@ -1,0 +1,39 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.9.RELEASE")
+    }
+}
+
+apply plugin: 'org.springframework.boot'
+
+version = '1.0'
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'parking-dao',
+                   'Implementation-Version': version
+    }
+}
+
+bootRepackage {
+    enabled = false
+}
+
+dependencies {
+    compile project(':parking-domain')
+	compile("org.springframework.boot:spring-boot-starter-data-jpa")
+	compile("com.h2database:h2")
+    testCompile project.ext.junit
+    testCompile project.ext.mockito
+}
+
+
+test {
+	jacoco {
+		append = false
+		destinationFile = file("jacoco/jacocoTest.exec")
+	}
+	reports.junitXml.destination = file("jacoco/test-results") 
+}
