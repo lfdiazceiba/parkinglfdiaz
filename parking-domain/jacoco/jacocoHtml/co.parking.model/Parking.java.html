@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Parking.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">parking-domain</a> &gt; <a href="index.source.html" class="el_package">co.parking.model</a> &gt; <span class="el_source">Parking.java</span></div><h1>Parking.java</h1><pre class="source lang-java linenums">package co.parking.model;
+
+import java.io.Serializable;
+import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+import co.parking.enumeration.TypeVehicle;
+
+@Entity
+public class Parking implements Serializable {
+
+  private static final long serialVersionUID = 1L;
+
+  @Id
+  @GeneratedValue(strategy=GenerationType.AUTO)
+  private long      id;
+  private Date      entryDate;
+  private Date      exitDate;
+  private int       payment;
+  private String    licensePlateVehicle;
+  private int       displacementVehicle;
+  private TypeVehicle typeVehicle;
+
+  public Parking(Date entryDate, String licensePlateVehicle, int displacementVehicle,
+<span class="nc" id="L29">      TypeVehicle typeVehicle) {</span>
+
+<span class="nc" id="L31">    this.entryDate           = entryDate;</span>
+<span class="nc" id="L32">    this.licensePlateVehicle = licensePlateVehicle;</span>
+<span class="nc" id="L33">    this.displacementVehicle = displacementVehicle;</span>
+<span class="nc" id="L34">    this.typeVehicle         = typeVehicle;</span>
+<span class="nc" id="L35">  }</span>
+
+  public String getLicensePlateVehicle() {
+<span class="nc" id="L38">    return licensePlateVehicle;</span>
+  }
+
+  public void setLicensePlateVehicle(String licensePlateVehicle) {
+<span class="nc" id="L42">    this.licensePlateVehicle = licensePlateVehicle;</span>
+<span class="nc" id="L43">  }</span>
+
+  public int getDisplacementVehicle() {
+<span class="nc" id="L46">    return displacementVehicle;</span>
+  }
+
+  public void setDisplacementVehicle(int displacementVehicle) {
+<span class="nc" id="L50">    this.displacementVehicle = displacementVehicle;</span>
+<span class="nc" id="L51">  }</span>
+
+<span class="nc" id="L53">  public Parking() {</span>
+
+<span class="nc" id="L55">  }</span>
+
+  public long getId() {
+<span class="nc" id="L58">    return id;</span>
+  }
+
+  public void setId(long id) {
+<span class="nc" id="L62">    this.id = id;</span>
+<span class="nc" id="L63">  }</span>
+
+  public Date getEntryDate() {
+<span class="nc" id="L66">    return entryDate;</span>
+  }
+
+  public void setEntryDate(Date entryDate) {
+<span class="nc" id="L70">    this.entryDate = entryDate;</span>
+<span class="nc" id="L71">  }</span>
+
+  public Date getExitDate() {
+<span class="nc" id="L74">    return exitDate;</span>
+  }
+
+  public void setExitDate(Date exitDate) {
+<span class="nc" id="L78">    this.exitDate = exitDate;</span>
+<span class="nc" id="L79">  }</span>
+
+  public int getPayment() {
+<span class="nc" id="L82">    return payment;</span>
+  }
+
+  public void setPayment(int payment) {
+<span class="nc" id="L86">    this.payment = payment;</span>
+<span class="nc" id="L87">  }</span>
+
+  public TypeVehicle getTypeVehicle() {
+<span class="nc" id="L90">    return typeVehicle;</span>
+  }
+
+  public void setTypeVehicle(TypeVehicle typeVehicle) {
+<span class="nc" id="L94">    this.typeVehicle = typeVehicle;</span>
+<span class="nc" id="L95">  }</span>
+
+  @Override
+  public boolean equals(Object obj) {
+<span class="nc bnc" id="L99" title="All 2 branches missed.">    if (obj == null) { </span>
+<span class="nc" id="L100">      return false;</span>
+    }
+
+<span class="nc bnc" id="L103" title="All 2 branches missed.">    if (this.getClass() != obj.getClass()) {</span>
+<span class="nc" id="L104">      return false;</span>
+    }
+
+<span class="nc" id="L107">    Parking parking = (Parking) obj;</span>
+
+<span class="nc bnc" id="L109" title="All 8 branches missed.">    return (this.entryDate == parking.entryDate</span>
+        &amp;&amp; this.displacementVehicle == parking.displacementVehicle
+        &amp;&amp; this.licensePlateVehicle == parking.licensePlateVehicle
+        &amp;&amp; this.typeVehicle == parking.typeVehicle);
+  }
+  
+  @Override
+  public int hashCode() {
+<span class="nc" id="L117">    int hash = 1;</span>
+<span class="nc" id="L118">    hash = hash * 3 + (int)this.id;</span>
+<span class="nc" id="L119">    hash = hash * 2 + this.displacementVehicle;</span>
+<span class="nc bnc" id="L120" title="All 2 branches missed.">    hash = hash * 5 + (this.entryDate == null ? 0 : this.entryDate.hashCode());</span>
+<span class="nc bnc" id="L121" title="All 2 branches missed.">    hash = hash * 2 + (this.licensePlateVehicle == null ? 0 : this.licensePlateVehicle.hashCode());</span>
+<span class="nc bnc" id="L122" title="All 2 branches missed.">    hash = hash * 3 + (this.typeVehicle == null ? 0 : this.typeVehicle.hashCode());</span>
+<span class="nc bnc" id="L123" title="All 2 branches missed.">    hash = hash * 3 + (this.exitDate == null ? 0 : this.exitDate.hashCode());</span>
+<span class="nc" id="L124">    hash = hash + this.payment;</span>
+<span class="nc" id="L125">    return hash;</span>
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.1.201405082137</span></div></body></html>

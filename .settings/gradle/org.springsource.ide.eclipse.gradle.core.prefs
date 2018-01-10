@@ -1,0 +1,5 @@
+#org.springsource.ide.eclipse.gradle.core.preferences.GradleProjectPreferences
+#Wed Jan 10 07:06:18 COT 2018
+build.family.org.gradle.tooling.model.eclipse.HierarchicalEclipseProject=;parking-api;parking-dao;parking-domain;parking-services;parking-utilities;
+org.springsource.ide.eclipse.gradle.linkedresources=
+org.springsource.ide.eclipse.gradle.rootprojectloc=

@@ -2,7 +2,7 @@ package co.parking.model;
 
 import java.io.Serializable;
 import java.util.Date;
-
+import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -33,6 +33,10 @@ public class Parking implements Serializable {
     this.displacementVehicle = displacementVehicle;
     this.typeVehicle         = typeVehicle;
   }
+  
+  public Parking() {
+
+  }
 
   public String getLicensePlateVehicle() {
     return licensePlateVehicle;
@@ -48,10 +52,6 @@ public class Parking implements Serializable {
 
   public void setDisplacementVehicle(int displacementVehicle) {
     this.displacementVehicle = displacementVehicle;
-  }
-
-  public Parking() {
-
   }
 
   public long getId() {
@@ -114,14 +114,7 @@ public class Parking implements Serializable {
   
   @Override
   public int hashCode() {
-    int hash = 1;
-    hash = hash * 3 + (int)this.id;
-    hash = hash * 2 + this.displacementVehicle;
-    hash = hash * 5 + (this.entryDate == null ? 0 : this.entryDate.hashCode());
-    hash = hash * 2 + (this.licensePlateVehicle == null ? 0 : this.licensePlateVehicle.hashCode());
-    hash = hash * 3 + (this.typeVehicle == null ? 0 : this.typeVehicle.hashCode());
-    hash = hash * 3 + (this.exitDate == null ? 0 : this.exitDate.hashCode());
-    hash = hash + this.payment;
-    return hash;
+    return Objects.hash(this.id, this.displacementVehicle, this.entryDate, this.licensePlateVehicle,
+        this.typeVehicle, this.exitDate, this.payment);
   }
 }

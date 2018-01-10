@@ -1,5 +1,7 @@
 package co.parking.model;
 
+import java.util.Objects;
+
 public class ParkingTime {
 
   private int days;
@@ -11,6 +13,10 @@ public class ParkingTime {
     this.days = days;
     this.hours = hours;
     this.minutes = minutes;
+  }
+  
+  public ParkingTime() {
+	  
   }
 
   public int getDays() {
@@ -56,10 +62,6 @@ public class ParkingTime {
 
   @Override
   public int hashCode() {
-    int hash = 1;
-    hash = hash * 3 + this.days;
-    hash = hash * 5 + this.hours;
-    hash = hash * 7 + this.minutes;
-    return hash;
+    return Objects.hash(this.days,this.hours,this.minutes); 
   }
 }
