@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.parking.model.ParkingTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2018-01-10T21:46:39" hostname="LEONARDO-DIAZ" time="0.003">
+  <properties/>
+  <testcase name="equalsParkingObjectsTest" classname="co.parking.model.ParkingTest" time="0.002"/>
+  <testcase name="createParkingObjectTest" classname="co.parking.model.ParkingTest" time="0.0"/>
+  <testcase name="setParkingTest" classname="co.parking.model.ParkingTest" time="0.001"/>
+  <testcase name="compareHashcodeParkingObjectTest" classname="co.parking.model.ParkingTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

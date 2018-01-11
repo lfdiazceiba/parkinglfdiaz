@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="co.parking.model.ParkingTimeTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2018-01-10T12:59:44" hostname="LEONARDO-DIAZ" time="0.002">
+<testsuite name="co.parking.model.ParkingTimeTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2018-01-10T21:46:39" hostname="LEONARDO-DIAZ" time="0.003">
   <properties/>
-  <testcase name="createParkingTimeObjectTest" classname="co.parking.model.ParkingTimeTest" time="0.001"/>
+  <testcase name="createParkingTimeObjectTest" classname="co.parking.model.ParkingTimeTest" time="0.002"/>
   <testcase name="equalsParkingTimeObjectsTest" classname="co.parking.model.ParkingTimeTest" time="0.0"/>
   <testcase name="setParkingObjectTest" classname="co.parking.model.ParkingTimeTest" time="0.0"/>
-  <testcase name="compareHascodesParkingTest" classname="co.parking.model.ParkingTimeTest" time="0.0"/>
+  <testcase name="compareHascodesParkingTest" classname="co.parking.model.ParkingTimeTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

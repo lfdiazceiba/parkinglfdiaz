@@ -13,16 +13,18 @@ import javax.ws.rs.Produces;
 @Path("/parking")
 public interface IParkingApi {
 
+
   @GET
   @Produces("application/json")
   @Path("/all")
   public List<Parking> getParkings();
 
+
   @POST
   @Consumes("application/json")
   @Path("/register")
-  public void registerParking(Parking parking);
-
+  public void registerParking(String parking);
+  
   @PUT
   @Produces("application/json")
   @Path("/bill")

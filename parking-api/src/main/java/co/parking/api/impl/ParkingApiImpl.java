@@ -22,8 +22,9 @@ public class ParkingApiImpl implements IParkingApi {
   }
 
   @Override
-  public void registerParking(Parking parking) {
-    vigilantService.lendParking(parking);
+  public void registerParking(String parking) {
+	System.out.println("creando parking " + parking);
+   // vigilantService.lendParking(parking);
 
   }
 

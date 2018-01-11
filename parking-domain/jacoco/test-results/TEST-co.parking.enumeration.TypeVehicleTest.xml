@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="co.parking.enumeration.TypeVehicleTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-01-10T12:59:44" hostname="LEONARDO-DIAZ" time="0.003">
+<testsuite name="co.parking.enumeration.TypeVehicleTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-01-10T21:46:39" hostname="LEONARDO-DIAZ" time="0.003">
   <properties/>
   <testcase name="CreateTypeVehicleTest" classname="co.parking.enumeration.TypeVehicleTest" time="0.003"/>
   <system-out><![CDATA[]]></system-out>
